@@ -822,12 +822,14 @@ a:hover svg path {
         top: -200%;
         background-color: #fff;
         z-index: 2;
+        opacity: 0;
     }
 
     .header__content.active{
         top: 0;
         overflow: scroll;
         height: 100vh;
+        opacity: 1;
     }
 
     .preheader__content {
