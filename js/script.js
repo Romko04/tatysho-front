@@ -20,8 +20,7 @@ window.addEventListener('click', function(e) {
     if (!select.contains(e.target)) {
         select.classList.remove('open');
     }
-    if (e.target.closest('.header__burger-wrappper')) {
-        alert(`Clicked element: ${e.target.outerHTML}`);
+    if (e.target.closest('.header__burger-wrapper')) {
         toggleMenu()
     }
 
