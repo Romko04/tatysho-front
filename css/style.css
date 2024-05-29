@@ -817,7 +817,7 @@ a:hover svg path {
         transition: all .6s ease;
         width: 100%;
         padding: 1.6rem;
-        padding-top: 3rem;
+        padding-top: 23rem;
         z-index: -1;
         top: -200%;
         background-color: #fff;
@@ -827,7 +827,7 @@ a:hover svg path {
     .header__content.active{
         top: 19.6rem;
         overflow: scroll;
-        height: 76vh;
+        height: 100vh;
     }
 
     .preheader__content {
