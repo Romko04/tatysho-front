@@ -825,7 +825,7 @@ a:hover svg path {
     }
 
     .header__content.active{
-        top: 19.6rem;
+        top: 0;
         overflow: scroll;
         height: 100vh;
     }
