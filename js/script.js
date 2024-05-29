@@ -21,8 +21,10 @@ window.addEventListener('click', function(e) {
         select.classList.remove('open');
     }
     if (e.target.closest('.header__burger-wrappper')) {
+        alert(`Clicked element: ${e.target.outerHTML}`);
         toggleMenu()
     }
+
 });
 
 function toggleMenu() {
