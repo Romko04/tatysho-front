@@ -1,6 +1,6 @@
 const hero__slider = document.querySelector('.hero__slider')
 const services__slider = document.querySelector('.services__slider')
-const utp__slider = document.querySelector('.utp__slider')
+const utp__slider = document.querySelector('.utp__slider--mobile')
 
 
 
