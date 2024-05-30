@@ -483,7 +483,7 @@ h2 {
 
 
 .header__search-wrapper::after,
-.socials::after,
+.socials--header::after,
 .header__phone::after,
 .custom-select-wrapper::after,
 .empty-block::after,
@@ -514,7 +514,7 @@ h2 {
     display: inline-block;
 }
 
-.socials a:first-child::after {
+.socials--header a:first-child::after {
     content: '';
     position: absolute;
     right: -1.2rem;
@@ -995,14 +995,155 @@ height: 34.6rem;
 }
 
 
+.calculation {
+    padding-top: 34rem;
+}
+.container {
+}
+.calculation__content {
+    position: relative;
+    background: var(--style2-242424);
+    padding: 8.8rem 12rem 9rem;
+}
+.calculation__content form{
+    max-width: 100rem;
+}
+.calculation__title {
+    font-family: var(--font-family);
+font-weight: 600;
+font-size: 8.8rem;
+line-height: 110%;
+color: var(--style1-ffffff);
+margin-bottom: 4rem;
+}
+.fields__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-bottom: 4.8rem;
+}
+.input__wrapper input {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 4.7rem;
+padding: 2.4rem 4rem;
+width: 50rem;
+background: transparent;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 1.6rem;
+line-height: 110%;
+color: var(--style1-ffffff);
+}
+.input__wrapper input::placeholder{
+    color: var(--style1-ffffff);
+}
+
+.socials--calculation{
+    position: absolute;
+    right: 74rem;
+    bottom: 8rem;
+    gap: 2.3rem;
+}
+.socials--calculation a{
+    height: 1.6rem;
+    width: 1.6rem;
+}
+.socials--calculation a:hover path {
+    fill: #e1e1e1;
+}
+.line-calculation{
+    content: '';
+    background-image: url('../img/icons/lineCalc.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 18rem;
+    bottom: 0;
+    right: -3rem;
+    width: 106.2rem;
+    position: absolute;
+}
+
+
+
+
+.socials--calculation svg {
+    width: 100%;
+    height: 100%;
+}
+
+.calculation__content-img {
+    position: absolute;
+    width: 59rem;
+height: 87.8rem;
+right: 8rem;
+bottom: 0;
+}
+
+
+
+.advantages {
+    padding-top: 8rem;
+}
+.advantages__title {
+    text-align: center;
+    margin-bottom: 4.8rem;
+}
+.adbantages__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+.adbantages__list-item {
+    text-align: center;
+    border: 1px solid var(--style1-f7f7f6);
+    padding: 4rem 0;
+}
+.adbantages__list-item p{
+    font-family: var(--font-family);
+    font-weight: 200;
+    font-size: 72px;
+    text-align: center;
+    color: var(--style2-242424);
+    margin-bottom: 1.6rem;
+}
+.adbantages__list-item p strong{
+    font-weight: 900;
+}
+.adbantages__list-item span{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--style2-242424);
+}
+
+.advantages__list-item strong {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.advantages__list-item.visible strong {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 
 
 /*MEDIA*/
 
 @media (max-width: 1024px) {
+    .button__services-wrapper{
+        padding-right: 1.6rem;
+    }
     button, .button{
         padding: 2.5rem 3rem;
+    }
+    .main .button, .main button{
+        width: 100%;
     }
     .button__services--mobile{
         margin-right: 1.6rem;
@@ -1236,11 +1377,11 @@ height: 34.6rem;
         padding: 2.8rem 8rem 2.8rem 6.75rem;
     }
 
-    .socials a:last-child {
+    .socials--header a:last-child {
         padding-right: 6.75rem;
     }
 
-    .socials a:first-child::after {
+    .socials--header a:first-child::after {
         right: 0;
     }
 
@@ -1442,6 +1583,50 @@ height: 34.6rem;
     }
     .utp__slider--mobile{
         display: block;
+    }
+
+
+    .calculation__content{
+        padding: 6.4rem 1.6rem 43rem;
+        overflow: hidden;
+    }
+
+    .calculation__content-img{
+        height: 39.6rem;
+        width: 26rem;
+        right: 1rem;
+    }
+
+    .calculation__title{
+        font-size: 3.2rem;
+    }
+    .input__wrapper input{
+        width: 100%;
+    }
+
+    .line-calculation{
+        background-image: url('../img/icons/lineMobile.svg');
+        width: 34rem;
+        height: 45rem;
+        bottom: 0;
+        top: auto;
+    }
+    .calculation{
+        padding-top: 8rem;
+    }
+
+
+    .adbantages__list{
+        grid-template-columns: 1fr;
+    }
+    .adbantages__list-item{
+        padding: 2.4rem 0;
+    }
+    .adbantages__list-item p{
+        font-size: 6.4rem;
+    }
+    .advantages__title{
+        font-size: 4rem;
     }
 }
 
