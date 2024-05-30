@@ -1084,8 +1084,8 @@ bottom: 0;
 }
 .advantages__title {
     text-align: center;
-    margin-bottom: 4.8rem;
     margin: 0 auto;
+    margin-bottom: 4.8rem;
 }
 .adbantages__list {
     display: grid;
@@ -1169,7 +1169,7 @@ color: var(--style2-242424);
     bottom: 0;
 }
 
-.services__swiper .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
+.services__swiper .swiper-horizontal > .swiper-scrollbar, .services__swiper .swiper-scrollbar.swiper-scrollbar-horizontal{
     bottom: 8.8rem;
 }
 
@@ -1186,6 +1186,15 @@ color: var(--style2-242424);
 /*MEDIA*/
 
 @media (max-width: 1024px) {
+    .services__swiper .swiper-wrapper{
+        margin-bottom: 3.2rem;
+    }
+    .services__swiper .swiper-horizontal > .swiper-scrollbar, .services__swiper .swiper-scrollbar.swiper-scrollbar-horizontal{
+        bottom: 0;
+    }
+    .swiper__buttons-services{
+        display: none;
+    }
     .button__services-wrapper{
         padding-right: 1.6rem;
     }
@@ -1312,12 +1321,12 @@ color: var(--style2-242424);
 
     .header__content {
         position: absolute;
-        transition: all .6s ease;
+        transition: all .8s ease;
         width: 100%;
         padding: 1.6rem;
         padding-top: 23rem;
         z-index: -1;
-        top: -200%;
+        top: -100%;
         background-color: #fff;
         z-index: 10;
         opacity: 0;
@@ -1325,6 +1334,7 @@ color: var(--style2-242424);
     
 
     .header__content.active {
+        transition: all .3s ease;
         top: 0;
         overflow: scroll;
         height: 100vh;
