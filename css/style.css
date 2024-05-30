@@ -909,13 +909,10 @@ button.button--black {
 .services {
     padding-top: 16rem;
 }
-.container {
-}
-.services__container {
-}
+
 .services__top {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 4.8rem;
 }
@@ -925,6 +922,7 @@ button.button--black {
     font-size: 8.8rem;
     line-height: 110%;
     color: var(--style2-242424);
+    max-width: 82rem;
 }
 
 .services__list {
@@ -951,7 +949,7 @@ height: 34.6rem;
     background-color: transparent;
     padding: 0;
     height: 2.4rem;
-    width: 2.4rem;
+    width: 2.4rem !important;
     border: none;
 }
 .services__list-btn--favourite svg{
@@ -1088,6 +1086,7 @@ bottom: 0;
 .advantages__title {
     text-align: center;
     margin-bottom: 4.8rem;
+    margin: 0 auto;
 }
 .adbantages__list {
     display: grid;
@@ -1128,6 +1127,48 @@ bottom: 0;
     opacity: 1;
     transform: translateY(0);
 }
+
+.services__swiper .swiper-wrapper{
+    margin-bottom: 3.4rem;
+}
+
+.swiper-wrapper--services__popular .services__item, .swiper-wrapper--services__new .services__item{
+    padding-bottom: 12rem;
+}
+
+.services__description{
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .8rem;
+    right: 0;
+    bottom: 5.6rem;
+}
+
+.services__title {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 2rem;
+line-height: 110%;
+color: var(--style2-242424);
+}
+.services__price {
+    font-family: var(--font-family);
+font-weight: 600;
+font-size: 2.4rem;
+line-height: 110%;
+color: var(--style2-242424);
+}
+
+
+
+
+/* .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
+    left: var(--swiper-scrollbar-sides-offset, 0);
+    width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset,0%));
+} */
 
 
 
