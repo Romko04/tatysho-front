@@ -74,6 +74,10 @@ if (services__popular__slider) {
             1024: {
                 slidesPerView: 3,
                 spaceBetween: 20,
+                navigation: {
+                    nextEl: '.swiper-button-next--popular',
+                    prevEl: '.swiper-button-prev--popular',
+                },
             }
         }
     });
@@ -92,7 +96,12 @@ if (services__type__slider) {
             1024: {
                 slidesPerView: 3,
                 spaceBetween: 20,
+                navigation: {
+                    nextEl: '.swiper-button-next--type',
+                    prevEl: '.swiper-button-prev--type',
+                },
             }
+            
         }
     });
 }
@@ -110,6 +119,10 @@ if (services__new__slider) {
             1024: {
                 slidesPerView: 3,
                 spaceBetween: 20,
+                navigation: {
+                    nextEl: '.swiper-button-next--new',
+                    prevEl: '.swiper-button-prev--new',
+                },
             }
         }
     });

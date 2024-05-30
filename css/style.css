@@ -996,8 +996,7 @@ height: 34.6rem;
 .calculation {
     padding-top: 34rem;
 }
-.container {
-}
+
 .calculation__content {
     position: relative;
     background: var(--style2-242424);
@@ -1129,7 +1128,7 @@ bottom: 0;
 }
 
 .services__swiper .swiper-wrapper{
-    margin-bottom: 3.4rem;
+    margin-bottom: 12rem;
 }
 
 .swiper-wrapper--services__popular .services__item, .swiper-wrapper--services__new .services__item{
@@ -1162,7 +1161,17 @@ line-height: 110%;
 color: var(--style2-242424);
 }
 
+.swiper__buttons-services{
+    display: flex;
+    gap: 1.6rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
 
+.services__swiper .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
+    bottom: 8.8rem;
+}
 
 
 /* .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
