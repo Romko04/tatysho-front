@@ -27,8 +27,8 @@ if (services__slider) {
         spaceBetween: 8,
         // Navigation arrows
         navigation: {
-            nextEl: '.swiper-button-next--hero',
-            prevEl: '.swiper-button-prev--hero',
+            nextEl: '.swiper-button-next--services',
+            prevEl: '.swiper-button-prev--services',
         },
 
         scrollbar: {
@@ -48,7 +48,7 @@ if (utp__slider) {
         },
 
         pagination: {
-            el: '.swiper-pagination--utp',
+            el: '.swiper-pagination',
             clickable: true,
         },
     });

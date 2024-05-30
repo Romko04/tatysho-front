@@ -1001,6 +1001,12 @@ height: 34.6rem;
 /*MEDIA*/
 
 @media (max-width: 1024px) {
+    button, .button{
+        padding: 2.5rem 3rem;
+    }
+    .button__services--mobile{
+        margin-right: 1.6rem;
+    }
     .swiper-scrollbar--services{
         height: .6rem;
         background: var(--style1-f7f7f6);
