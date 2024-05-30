@@ -1,8 +1,10 @@
+const headerContent = document.querySelector('.header__content')
+
+
 document.querySelector('.custom-select-wrapper').addEventListener('click', function() {
     this.querySelector('.custom-select').classList.toggle('open');
 });
 
-const headerContent = document.querySelector('.header__content')
 
 for (const option of document.querySelectorAll(".custom-option")) {
     option.addEventListener('click', function() {
