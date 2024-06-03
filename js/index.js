@@ -28,6 +28,25 @@ window.addEventListener('click', function (e) {
         toggleMenu()
     }
 
+    if (e.target.closest('.seo__block')) {
+        let wrapper = e.target.closest('.seo__block')
+        let text = wrapper.querySelector('.seo__text');
+        let isActive = text.classList.contains('active');
+        if (isActive) {
+            text.style.maxHeight = null;
+            text.classList.remove('active')
+            return 
+        }
+        if (text.style.maxHeight) {
+            text.style.maxHeight = null;
+            text.style.marginTop = null;
+        } else {
+            text.style.maxHeight = text.scrollHeight + 'px';
+            text.style.marginTop = '1.5rem';
+
+        }
+    }
+
 });
 
 function toggleMenu() {

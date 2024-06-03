@@ -4,6 +4,9 @@ const utp__slider = document.querySelector('.utp__slider--mobile')
 const services__popular__slider = document.querySelector('.services__popular__slider')
 const services__type__slider = document.querySelector('.services__type__slider')
 const services__new__slider = document.querySelector('.services__new__slider')
+const cases__slider = document.querySelector('.cases__slider')
+const reviews__slider = document.querySelector('.reviews__slider')
+
 
 
 
@@ -127,3 +130,43 @@ if (services__new__slider) {
         }
     });
 }
+
+if (cases__slider) {
+    new Swiper(cases__slider, {
+        slidesPerView: 1.1,
+        spaceBetween: 8,
+        // Navigation arrows
+        scrollbar: {
+            el: '.swiper-scrollbar-cases',
+            draggable: true,
+          },
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: '.swiper-button-next--cases',
+                    prevEl: '.swiper-button-prev--cases',
+                },
+            }
+        }
+    });
+}
+
+if (reviews__slider) {
+    new Swiper(reviews__slider, {
+        slidesPerView: 1.1,
+        spaceBetween: 8,
+        navigation: {
+            nextEl: '.swiper-button-next--reviews',
+            prevEl: '.swiper-button-prev--reviews',
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            }
+        }
+    });
+}
+
