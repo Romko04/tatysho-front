@@ -854,7 +854,7 @@ a svg path {
 
 
 
-.button {
+.button, button {
     border: 1px solid var(--style2-242424);
     border-radius: 4.7rem;
     padding: 3.2rem 3rem;
@@ -1881,6 +1881,7 @@ footer .links a {
     background: var(--style1-f7f7f6);
     position: relative;
     cursor: pointer;
+    border-radius: 0;
 }
 
 .filters{
