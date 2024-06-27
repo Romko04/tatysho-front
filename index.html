@@ -1009,11 +1009,14 @@
                 <div class="container services__container">
                     <div class="title__wrapper">
                         <h2 class="title">Популярні принти</h2>
-                        <a class="button" href="">В каталог</a>
+                        <a class="button" href="#">В каталог</a>
                     </div>
-                    <div class="swiper services__popular__slider services__swiper">
+                    <div class="swiper swiper-product" 
+                    data-next=".swiper-button-next--popular"
+                    data-prev=".swiper-button-prev--popular" 
+                    data-scrollbar=".swiper-scrollbar--popular">
                         <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper swiper-wrapper--services__popular">
+                        <div class="swiper-wrapper swiper-wrapper--products">
                             <!-- Slides -->
                             <div class="swiper-slide">
                                 <div class="product">
@@ -1157,7 +1160,7 @@
                             </div>
                         </div>
                         <div class="swiper__buttons-services">
-                            <div class="swiper-button-prev swiper-button-prev--popular">
+                            <div class="swiper-button-prev swiper-button-prev--related">
                                 <div class="swiper__button">
                                     <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -1167,7 +1170,7 @@
                                     </svg>
                                 </div>
                             </div>
-                            <div class="swiper-button-next swiper-button-next--popular">
+                            <div class="swiper-button-next swiper-button-next--related">
                                 <div class="swiper__button">
                                     <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -1178,22 +1181,50 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-scrollbar swiper-scrollbar--services-popular"></div>
+                        <div class="swiper-scrollbar swiper-scrollbar--popular"></div>
                     </div>
+                    <!-- Swiper navigation and scrollbar should be outside the main swiper container -->
+                    <div class="swiper__buttons-services">
+                        <div class="swiper-button-prev swiper-button-prev--popular">
+                            <div class="swiper__button">
+                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.95 18.364L8.34449 9.75847V17.6639L6.34338 17.6569V6.34315H17.6571V8.33719L9.7587 8.34426L18.3642 16.9497L16.95 18.364Z"
+                                        fill="#242424" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next swiper-button-next--popular">
+                            <div class="swiper__button">
+                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.05002 18.364L15.6555 9.75847V17.6639L17.6566 17.6569V6.34315H6.34291V8.33719L14.2413 8.34426L5.63581 16.9497L7.05002 18.364Z"
+                                        fill="#242424" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar swiper-scrollbar-popular"></div>
                     <div class="button__services-wrapper">
-                        <a class="button button__services--mobile" href="">В каталог</a>
+                        <a class="button button__services--mobile" href="#">В каталог</a>
                     </div>
                 </div>
             </section>
+            
             <section class="products products--new">
                 <div class="container services__container">
                     <div class="title__wrapper">
                         <h2 class="title">Нові принти</h2>
                         <a class="button" href="">В каталог</a>
                     </div>
-                    <div class="swiper services__new__slider services__swiper services__swiper">
+                    <div class="swiper swiper-product" 
+                    data-next=".swiper-button-next--new"
+                    data-prev=".swiper-button-prev--new" 
+                    data-scrollbar=".swiper-scrollbar--new">
                         <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper swiper-wrapper--services__new services__swiper">
+                        <div class="swiper-wrapper swiper-wrapper--products">
                             <!-- Slides -->
                             <div class="swiper-slide">
                                 <div class="product">
@@ -1307,10 +1338,37 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="swiper-slide">
+                                <div class="product">
+                                    <button class="product__list-btn--favourite">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.5 4C4.4625 4 2 6.4625 2 9.5C2 15 8.5 20 12 21.163C15.5 20 22 15 22 9.5C22 6.4625 19.5375 4 16.5 4C14.64 4 12.995 4.9235 12 6.337C11.4928 5.6146 10.8191 5.02505 10.0358 4.61824C9.25245 4.21144 8.38265 3.99938 7.5 4Z"
+                                                stroke="#242424" stroke-opacity="0.3" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                    <a class="product__list-btn--single" href="">
+                                        <svg width="9" height="9" viewBox="0 0 9 9" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.70018 8.24264L7.43717 2.50565L7.43717 7.77595L8.77124 7.77124V0.228764H1.22877L1.22877 1.55812L6.49436 1.56284L0.757367 7.29983L1.70018 8.24264Z"
+                                                fill="#242424" />
+                                        </svg>
+                                    </a>
+                                    <a href="" class="product__list-img__link">
+                                        <img src="./img/tmp/футболка.png" alt="previe">
+                                    </a>
+                                    <div class="product__description">
+                                        <a class="product__title" href="">Друк на <strong>футболках</strong></a>
+                                        <span class="product__price">599 грн</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="swiper__buttons-services">
-                            <div class="swiper-button-prev swiper-button-prev--new">
+                            <div class="swiper-button-prev swiper-button-prev--related">
                                 <div class="swiper__button">
                                     <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -1330,9 +1388,8 @@
                                     </svg>
                                 </div>
                             </div>
-
                         </div>
-                        <div class="swiper-scrollbar swiper-scrollbar--services-new"></div>
+                        <div class="swiper-scrollbar swiper-scrollbar--new"></div>
                     </div>
                     <div class="button__services-wrapper">
                         <a class="button button__services--mobile" href="">В каталог</a>

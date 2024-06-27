@@ -1,16 +1,40 @@
 const hero__slider = document.querySelector('.hero__slider')
 const services__slider = document.querySelector('.services__slider')
 const utp__slider = document.querySelector('.utp__slider--mobile')
-const services__popular__slider = document.querySelector('.services__popular__slider')
 const services__type__slider = document.querySelector('.services__type__slider')
-const services__new__slider = document.querySelector('.services__new__slider')
 const cases__slider = document.querySelector('.cases__slider')
 const reviews__slider = document.querySelector('.reviews__slider')
+const products__sliders = document.querySelectorAll('.swiper-product')
 
 
 
 
+if (products__sliders.length > 0) {
+    products__sliders.forEach(products__slider => {
+        const nextButton = products__slider.getAttribute('data-next');
+        const prevButton = products__slider.getAttribute('data-prev');
+        const scrollButton = products__slider.getAttribute('data-scrollbar');
 
+        new Swiper(products__slider, {
+            slidesPerView: 1.1,
+            spaceBetween: 8,
+            navigation: {
+                nextEl: nextButton,
+                prevEl: prevButton,
+            },
+            scrollbar: {
+                el: scrollButton,
+                draggable: true,
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
+            }
+        });
+    });
+}
 
 
 
@@ -21,7 +45,7 @@ if (hero__slider) {
             el: '.swiper-pagination--hero',
             clickable: true,
         },
-    
+
         // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next--hero',
@@ -43,7 +67,7 @@ if (services__slider) {
         scrollbar: {
             el: '.swiper-scrollbar--services',
             draggable: true,
-          },
+        },
     });
 }
 
@@ -64,27 +88,7 @@ if (utp__slider) {
     });
 }
 
-if (services__popular__slider) {
-    new Swiper(services__popular__slider, {
-        slidesPerView: 1.1,
-        spaceBetween: 8,
-        // Navigation arrows
-        scrollbar: {
-            el: '.swiper-scrollbar--services-popular',
-            draggable: true,
-          },
-        breakpoints: {
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-                navigation: {
-                    nextEl: '.swiper-button-next--popular',
-                    prevEl: '.swiper-button-prev--popular',
-                },
-            }
-        }
-    });
-}
+
 
 if (services__type__slider) {
     new Swiper(services__type__slider, {
@@ -94,7 +98,7 @@ if (services__type__slider) {
         scrollbar: {
             el: '.swiper-scrollbar--services-type',
             draggable: true,
-          },
+        },
         breakpoints: {
             1024: {
                 slidesPerView: 3,
@@ -104,32 +108,11 @@ if (services__type__slider) {
                     prevEl: '.swiper-button-prev--type',
                 },
             }
-            
+
         }
     });
 }
 
-if (services__new__slider) {
-    new Swiper(services__new__slider, {
-        slidesPerView: 1.1,
-        spaceBetween: 8,
-        // Navigation arrows
-        scrollbar: {
-            el: '.swiper-scrollbar--services-new',
-            draggable: true,
-          },
-        breakpoints: {
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-                navigation: {
-                    nextEl: '.swiper-button-next--new',
-                    prevEl: '.swiper-button-prev--new',
-                },
-            }
-        }
-    });
-}
 
 if (cases__slider) {
     new Swiper(cases__slider, {
@@ -139,7 +122,7 @@ if (cases__slider) {
         scrollbar: {
             el: '.swiper-scrollbar-cases',
             draggable: true,
-          },
+        },
         breakpoints: {
             1024: {
                 slidesPerView: 4,

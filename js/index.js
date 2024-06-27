@@ -1,6 +1,122 @@
 const headerContent = document.querySelector('.header__content')
 const counters = document.querySelectorAll('.adbantages__list-item strong');
 const section = document.querySelector('.advantages');
+const body = document.querySelector('body');
+const timeout = 300
+
+let unlockPopup = true
+
+
+const formatNumber = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
+
+const callback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                let increment;
+                let delay;
+
+                if (target > 100000) {
+                    increment = 2500;
+                    delay = 20;
+                } else if (target > 50000) {
+                    increment = 500;
+                    delay = 10;
+                } else if (target > 10000) {
+                    increment = 500;
+                    delay = 15;
+                } else if (target > 5000) {
+                    increment = 50;
+                    delay = 20;
+                } else if (target > 1000) {
+                    increment = 10;
+                    delay = 30;
+                } else {
+                    increment = 1;
+                    delay = 50;
+                }
+
+                const updateCounter = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.textContent = formatNumber(count);
+                        setTimeout(updateCounter, delay);
+                    } else {
+                        counter.textContent = formatNumber(target);
+                    }
+                };
+
+                updateCounter();
+            });
+
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+
+function toggleMenu() {
+    const btn = document.querySelector('.header__burger');
+    headerContent.classList.toggle('active');
+    btn.classList.toggle('active');
+    btn.classList.contains('active') ? document.body.classList.add('body-block') : document.body.classList.remove('body-block')
+}
+
+function updateSidebarPosition() {
+    const currentScroll = window.pageYOffset;
+    const sidebar = document.querySelector('.sidebar__catalog');
+    const catalogContent = document.querySelector('.catalog__content');
+
+    const catalogContentTopHeight = catalogContent.getBoundingClientRect().top + window.pageYOffset;
+    const catalogContentBottomHeight = catalogContentTopHeight + catalogContent.offsetHeight;
+    const sidebarHeight = sidebar.offsetHeight;
+    const catalogContentBottomHeightMargin = catalogContentBottomHeight - sidebarHeight - 50
+
+
+    if (currentScroll >= catalogContentTopHeight - 50 && currentScroll < catalogContentBottomHeightMargin) {
+        sidebar.classList.add('fixed');
+        sidebar.classList.remove('bottom');
+    } else if (currentScroll >= catalogContentBottomHeightMargin) {
+        sidebar.classList.remove('fixed');
+        sidebar.classList.add('bottom');
+    } else {
+        sidebar.classList.remove('fixed');
+        sidebar.classList.remove('bottom');
+    }
+}
+
+function bodyLock() {
+    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px'
+    body.classList.add('body--lock')
+    body.style.paddingRight = lockPaddingValue
+    // header.style.paddingRight = lockPaddingValue
+
+    unlockPopup = false
+
+    setTimeout(() => {
+        unlockPopup = true
+    }, timeout);
+}
+
+function bodyUnLock() {
+    setTimeout(() => {
+        body.style.paddingRight = '0px'
+        // header.style.paddingRight = '0px'
+        body.classList.remove('body--lock')
+
+    }, timeout);
+
+    unlockPopup = false
+
+    setTimeout(() => {
+        unlockPopup = true
+    }, timeout);
+}
+
 
 
 document.querySelector('.custom-select-wrapper').addEventListener('click', function () {
@@ -18,6 +134,10 @@ for (const option of document.querySelectorAll(".custom-option")) {
         }
     });
 }
+
+
+
+
 
 window.addEventListener('click', function (e) {
     const select = document.querySelector('.custom-select');
@@ -84,69 +204,54 @@ window.addEventListener('click', function (e) {
         }
     }
 
+
+    if (e.target.closest('.tabs__tab')) {
+        const tab = e.target.closest('.tabs__tab');
+        document.querySelectorAll('.tabs__tab').forEach(item => item.classList.remove('tabs__tab--active'));
+        document.querySelectorAll('.tabs__content').forEach(content => {
+            content.classList.remove('tabs__content--active');
+            content.style.height = '0'; // Set height to 0 before removing active class
+        });
+
+        tab.classList.add('tabs__tab--active');
+        const contentToShow = document.getElementById(tab.getAttribute('data-tab'));
+        contentToShow.classList.add('tabs__content--active');
+        contentToShow.style.height = contentToShow.scrollHeight + 'px'; // Set height to auto to trigger transition
+    }
+
+
+            //Прослушка для попапа
+            if (e.target.classList.contains('btn__popup')) {
+
+                const popupClass = e.target.getAttribute('data-popup');
+                const popup = document.querySelector(popupClass)
+    
+    
+    
+                if (unlockPopup) {
+                    bodyLock()
+                    popup.classList.add('active')
+                    popup.addEventListener('click', (e) => {
+                        if (!e.target.closest('.popup__content') || e.target.closest('.popup__close')) {
+                            e.preventDefault()
+                            popup.classList.remove('active')
+                            bodyUnLock()
+                        }
+                    })
+                }
+    
+            }
+
 });
 
-function toggleMenu() {
-    const btn = document.querySelector('.header__burger');
-    headerContent.classList.toggle('active');
-    btn.classList.toggle('active');
-    btn.classList.contains('active') ? document.body.classList.add('body-block') : document.body.classList.remove('body-block')
-}
+
+
+
+
 
 
 
 /*COUNTER*/
-
-const formatNumber = (num) => {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-};
-
-const callback = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                let increment;
-                let delay;
-
-                if (target > 100000) {
-                    increment = 2500;
-                    delay = 20;
-                } else if (target > 50000) {
-                    increment = 500;
-                    delay = 10;
-                } else if (target > 10000) {
-                    increment = 500;
-                    delay = 15;
-                } else if (target > 5000) {
-                    increment = 50;
-                    delay = 20;
-                } else if (target > 1000) {
-                    increment = 10;
-                    delay = 30;
-                } else {
-                    increment = 1;
-                    delay = 50;
-                }
-
-                const updateCounter = () => {
-                    count += increment;
-                    if (count < target) {
-                        counter.textContent = formatNumber(count);
-                        setTimeout(updateCounter, delay);
-                    } else {
-                        counter.textContent = formatNumber(target);
-                    }
-                };
-
-                updateCounter();
-            });
-
-            observer.unobserve(entry.target);
-        }
-    });
-};
 
 const options = {
     root: null,
@@ -187,42 +292,18 @@ document.querySelectorAll('.header__menu-items li').forEach(item => {
 });
 
 
-/*XFIXED SIDEBAR */
+/*FIXED SIDEBAR */
 
 const sidebar = document.querySelector('.sidebar__catalog');
 const catalogContent = document.querySelector('.catalog__content');
 
-const sidebarHeight = sidebar.offsetHeight;
-const catalogContentTopHeight = catalogContent.getBoundingClientRect().top
-const catalogContentBottomHeight = catalogContent.getBoundingClientRect().bottom
+if (sidebar && catalogContent) {
 
-function updateSidebarPosition() {
-    const currentScroll = window.pageYOffset;
-    const sidebar = document.querySelector('.sidebar__catalog');
-    const catalogContent = document.querySelector('.catalog__content');
+    updateSidebarPosition()
 
-    const catalogContentTopHeight = catalogContent.getBoundingClientRect().top + window.pageYOffset;
-    const catalogContentBottomHeight = catalogContentTopHeight + catalogContent.offsetHeight;
-    const sidebarHeight = sidebar.offsetHeight;
-    const catalogContentBottomHeightMargin = catalogContentBottomHeight - sidebarHeight - 50
-
-
-    if (currentScroll >= catalogContentTopHeight - 50 && currentScroll < catalogContentBottomHeightMargin) {
-        sidebar.classList.add('fixed');
-        sidebar.classList.remove('bottom');
-    } else if (currentScroll >= catalogContentBottomHeightMargin) {
-        sidebar.classList.remove('fixed');
-        sidebar.classList.add('bottom');
-    } else {
-        sidebar.classList.remove('fixed');
-        sidebar.classList.remove('bottom');
-    }
+    // Слухач подій для прокрутки сторінки
+    window.addEventListener('scroll', updateSidebarPosition);
 }
-
-updateSidebarPosition()
-
-// Слухач подій для прокрутки сторінки
-window.addEventListener('scroll', updateSidebarPosition);
 
 
 
@@ -235,6 +316,7 @@ const rangeInput = document.querySelectorAll(".range-input input"),
     priceInput = document.querySelectorAll(".price-input input"),
     range = document.querySelector(".slider .progress");
 let priceGap = 1000;
+
 priceInput.forEach(input => {
     input.addEventListener("input", e => {
         let minPrice = parseInt(priceInput[0].value),
@@ -251,6 +333,7 @@ priceInput.forEach(input => {
         }
     });
 });
+
 rangeInput.forEach(input => {
     input.addEventListener("input", e => {
         let minVal = parseInt(rangeInput[0].value),
@@ -273,10 +356,14 @@ rangeInput.forEach(input => {
 
 var sortWrapper = document.querySelector('.settings__button-sort');
 
-sortWrapper.addEventListener('mouseover', function () {
-    sortWrapper.classList.add('active');
-});
+if (sortWrapper) {
+    sortWrapper.addEventListener('mouseover', function () {
+        sortWrapper.classList.add('active');
+    });
 
-sortWrapper.addEventListener('mouseout', function () {
+    sortWrapper.addEventListener('mouseout', function () {
         sortWrapper.classList.remove('active');
-});
+    });
+}
+
+
