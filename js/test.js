@@ -191,6 +191,7 @@ if ((e.target.closest('.header__menu-items > li > a') || e.target.closest('.head
 
   if (menu.style.maxHeight) {
     menu.style.maxHeight = null;
+    menu.style.marginTop = null;
   } else {
     let totalSubMenuHeight = 0;
 
@@ -205,6 +206,7 @@ if ((e.target.closest('.header__menu-items > li > a') || e.target.closest('.head
     calculateHeight(menu);
 
     menu.style.maxHeight = totalSubMenuHeight + 'px';
+    menu.style.marginTop = '1.5rem';
   }
 }
 

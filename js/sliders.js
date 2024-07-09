@@ -75,7 +75,17 @@ if (utp__slider) {
     new Swiper(utp__slider, {
         slidesPerView: 0.9,
         spaceBetween: 8,
-        // Navigation arrows
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: '.swiper-button-next--type',
+                    prevEl: '.swiper-button-prev--type',
+                },
+            }
+
+        },
         navigation: {
             nextEl: '.swiper-button-next--utp',
             prevEl: '.swiper-button-prev--utp',
