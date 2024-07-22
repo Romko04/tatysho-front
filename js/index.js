@@ -182,31 +182,31 @@ window.addEventListener('click', function (e) {
     }
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-if ((e.target.closest('.header__menu-items > li > a') || e.target.closest('.header__menu-items > li li')) && isMobile) {
-  e.preventDefault();
+    if ((e.target.closest('.header__menu-items > li > a') || e.target.closest('.header__menu-items > li li')) && isMobile) {
+        e.preventDefault();
 
-  const li = e.target.closest('.header__menu-items li');
-  const menu = li.querySelector('.sub__menu');
-  e.target.classList.toggle('active');
+        const li = e.target.closest('.header__menu-items li');
+        const menu = li.querySelector('.sub__menu');
+        e.target.classList.toggle('active');
 
-  if (menu.style.maxHeight) {
-    menu.style.maxHeight = null;
-  } else {
-    let totalSubMenuHeight = 0;
+        if (menu.style.maxHeight) {
+            menu.style.maxHeight = null;
+        } else {
+            let totalSubMenuHeight = 0;
 
-    const calculateHeight = (element) => {
-      totalSubMenuHeight += element.scrollHeight;
-      const nestedMenus = element.querySelectorAll('.sub__menu');
-      nestedMenus.forEach(nestedMenu => {
-        calculateHeight(nestedMenu);
-      });
-    };
+            const calculateHeight = (element) => {
+                totalSubMenuHeight += element.scrollHeight;
+                const nestedMenus = element.querySelectorAll('.sub__menu');
+                nestedMenus.forEach(nestedMenu => {
+                    calculateHeight(nestedMenu);
+                });
+            };
 
-    calculateHeight(menu);
+            calculateHeight(menu);
 
-    menu.style.maxHeight = totalSubMenuHeight + 'px';
-  }
-}
+            menu.style.maxHeight = totalSubMenuHeight + 'px';
+        }
+    }
 
     const product__list = document.querySelector('.catalog__content')
 
@@ -233,27 +233,44 @@ if ((e.target.closest('.header__menu-items > li > a') || e.target.closest('.head
     }
 
 
-            //Прослушка для попапа
-            if (e.target.classList.contains('btn__popup')) {
+    //Прослушка для попапа
+    if (e.target.classList.contains('btn__popup')) {
 
-                const popupClass = e.target.getAttribute('data-popup');
-                const popup = document.querySelector(popupClass)
-    
-    
-    
-                if (unlockPopup) {
-                    bodyLock()
-                    popup.classList.add('active')
-                    popup.addEventListener('click', (e) => {
-                        if (!e.target.closest('.popup__content') || e.target.closest('.popup__close')) {
-                            e.preventDefault()
-                            popup.classList.remove('active')
-                            bodyUnLock()
-                        }
-                    })
+        const popupClass = e.target.getAttribute('data-popup');
+        const popup = document.querySelector(popupClass)
+
+
+
+        if (unlockPopup) {
+            bodyLock()
+            popup.classList.add('active')
+            popup.addEventListener('click', (e) => {
+                if (!e.target.closest('.popup__content') || e.target.closest('.popup__close')) {
+                    e.preventDefault()
+                    popup.classList.remove('active')
+                    bodyUnLock()
                 }
+            })
+        }
+
+    }
+
+
+    const mainPhoto = document.querySelector('.product-slider .main-image img');
+
+    document.querySelector('.thumbnail-container').addEventListener('click', function (e) {
+        if (e.target.closest('.thumbnail img')) {
+            const thumbnailSrc = e.target.getAttribute('src');
     
-            }
+            mainPhoto.classList.add('fade-out');
+    
+            setTimeout(() => {
+                mainPhoto.setAttribute('src', thumbnailSrc);
+                mainPhoto.classList.remove('fade-out');
+            }, 300); // Затримка відповідно до тривалості transition
+        }
+    });
+    
 
 });
 
