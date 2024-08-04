@@ -5,6 +5,56 @@ const services__type__slider = document.querySelector('.services__type__slider')
 const cases__slider = document.querySelector('.cases__slider')
 const reviews__slider = document.querySelector('.reviews__slider')
 const products__sliders = document.querySelectorAll('.swiper-product')
+const product__single__swiper = document.querySelector('.product__single__swiper')
+const product__colors__swiper = document.querySelector('.product__colors__swiper')
+
+
+
+
+
+if (product__single__swiper) {
+    new Swiper(product__single__swiper, {
+        slidesPerView: 1,
+        spaceBetween: 8,
+        direction: 'horizontal',
+        pagination: {
+            el: '.swiper-pagination--product',
+            clickable: true,
+            renderBullet: function (index, className) {
+                if (index < 6) { // Ліміт на 4 булети
+                    return '<span class="' + className + '"></span>';
+                }
+                return '';
+            },
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 8,
+                direction: 'vertical',
+            },
+        }
+    });
+}
+
+
+
+
+
+if (product__colors__swiper) {
+
+
+    new Swiper(product__colors__swiper, {
+        slidesPerView: 5.8,
+        spaceBetween: 24,
+        scrollbar: {
+            el: '.swiper-scrollbar--colors',
+            draggable: true,
+        },
+        
+    });
+
+}
 
 
 
@@ -74,18 +124,9 @@ if (services__slider) {
 if (utp__slider) {
     new Swiper(utp__slider, {
         slidesPerView: 0.9,
+        centeredSlides: true,
         spaceBetween: 8,
-        breakpoints: {
-            1024: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-                navigation: {
-                    nextEl: '.swiper-button-next--type',
-                    prevEl: '.swiper-button-prev--type',
-                },
-            }
-
-        },
+        // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next--utp',
             prevEl: '.swiper-button-prev--utp',
@@ -95,6 +136,14 @@ if (utp__slider) {
             el: '.swiper-pagination',
             clickable: true,
         },
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                centeredSlides: false,
+            }
+
+        }
     });
 }
 

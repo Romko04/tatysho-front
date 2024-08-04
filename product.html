@@ -258,9 +258,9 @@
         </header>
         <main class="main">
             <div class="container">
-                <div class="pagination">
-                    <div class="pagination__wrapper">
-                        <a class="pagination__home-link" href="./index.html">
+                <div class="breadcrumbs">
+                    <div class="breadcrumbs__wrapper">
+                        <a class="breadcrumbs__home-link" href="./index.html">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -274,8 +274,8 @@
                         <span>Одяг під друк</span>
                     </div>
                 </div>
-                <div class="title__wrapper">
-                    <h1 class="title">Футболка Світ баскетбола</h2>
+                <div class="title__wrapper title__wrapper-product">
+                    <h1 class="title title--product">Футболка Світ баскетбола</h2>
                 </div>
                 <span class="product__article">Артикул N1000/BLK</span>
             </div>
@@ -285,16 +285,50 @@
                     <div class="product__single-content">
                         <div class="product-slider">
                             <div class="slider-container">
-                                <div class="thumbnail-container">
-                                    <div class="thumbnail">
-                                        <img src="./img/tmp/slider-product/product1.png" alt="Thumbnail 1">
+                                <div class="swiper product__single__swiper">
+                                    <div class="swiper-wrapper ">
+                                        <div class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <img src="./img/tmp/slider-product/product1.png" alt="Thumbnail 1">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <img src="./img/tmp/slider-product/product1.png" alt="Thumbnail 1">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <img src="./img/tmp/slider-product/product1.png" alt="Thumbnail 1">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <img src="./img/tmp/slider-product/product1.png" alt="Thumbnail 1">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <img src="./img/tmp/slider-product/product1.png" alt="Thumbnail 1">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <img src="./img/tmp/slider-product/product1.png" alt="Thumbnail 1">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <img src="./img/tmp/поло.png" alt="Thumbnail 1">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="thumbnail">
+                                                <img src="./img/tmp/slider-product/product1.png" alt="Thumbnail 1">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="thumbnail">
-                                        <img src="./img/tmp/поло.png" alt="Thumbnail 1">
-                                    </div>
-                                    <div class="thumbnail">
-                                        <img src="./img/tmp/slider-product/product1.png" alt="Thumbnail 1">
-                                    </div>
+                                    <div class="swiper-pagination swiper-pagination--product"></div>
                                 </div>
                                 <div class="main-image">
                                     <img src="./img/tmp/slider-product/product1-main.png" alt="Main Product Image"
@@ -306,13 +340,24 @@
                             <div class="product__sizes">
                                 <div class="product__sizes-top">
                                     <div class="product__sizes-title">Виберіть розмір</div>
-                                    <div class="product__sizes-chart"><button class="btn__popup" data-popup=".popup--measurements">Таблиця розмірів</button></div>
+                                    <div class="product__sizes-chart">
+                                        <button class="btn__popup product__sizes-btn" data-popup=".popup--measurements">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M22.8587 16.0153L12.9346 9.79971V9.33284C12.9346 9.05701 13.0761 8.83472 13.38 8.63428C13.4176 8.6093 13.4618 8.5825 13.5109 8.55257C13.9929 8.25709 14.9964 7.64244 14.9964 6.25693C14.9964 4.81781 13.8104 3.71351 12.6632 3.47694C11.4553 3.2261 10.36 3.52021 9.64666 4.30317C8.99633 5.01468 8.81374 5.60747 8.77535 6.56982C8.77222 6.63945 8.77047 6.78942 8.76865 6.93582C8.76684 7.13801 9.1659 7.30231 9.65869 7.30231H9.83721C10.33 7.30231 10.7304 7.13894 10.7313 6.93675C10.7317 6.76982 10.7331 6.602 10.7344 6.57026C10.7617 5.90652 10.9402 5.51593 11.6178 5.37892C12.0391 5.29413 12.494 5.41198 12.7605 5.67309C12.8814 5.79093 12.9452 5.99537 12.9274 6.20652C12.9158 6.34715 12.8555 6.61046 12.59 6.79348L11.7396 7.37243C11.1973 7.7197 10.9665 8.13529 10.9665 8.76152V9.80108L1.14252 15.9935C-0.313557 16.8915 -0.012248 18.4231 0.114986 18.8712C0.231512 19.2797 0.761315 20.612 2.69053 20.612H21.4321C22.7953 20.612 23.6577 19.7256 23.909 18.8462C24.1692 17.9267 23.8871 16.6215 22.8587 16.0153ZM21.8503 18.1784C21.8035 18.3427 21.6512 18.5199 21.4039 18.5199C21.4035 18.5199 21.4035 18.5199 21.4035 18.5199H2.66686C2.40706 18.519 2.26067 18.3485 2.21426 18.203C2.1549 18.0159 2.23167 17.8249 2.40844 17.6995L12.0116 11.6887L21.6678 17.725C21.9066 17.8745 21.8749 18.0918 21.8503 18.1784Z"
+                                                    fill="#242424" />
+                                            </svg>
+                                            Таблиця розмірів
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="product__sizes-options">
                                     <button class="product__sizes-option product__sizes-option--selected">XS</button>
                                     <button class="product__sizes-option">S</button>
                                     <button class="product__sizes-option">M</button>
-                                    <button data-popup=".popup--size" class="product__sizes-option product__sizes-option--none btn__popup">L</button>
+                                    <button data-popup=".popup--size"
+                                        class="product__sizes-option product__sizes-option--none btn__popup">L</button>
                                     <button class="product__sizes-option">XL</button>
                                     <button class="product__sizes-option">XXL</button>
                                     <button class="product__sizes-option">XXXL</button>
@@ -321,7 +366,7 @@
                             <div class="product__colors">
                                 <div class="product__colors-title">Колір: <span>Чорний</span></div>
                                 <div class="product__colors-options">
-                                    <button class="product__colors-option"  style="background-color: #4a4a4a;"></button>
+                                    <button class="product__colors-option" style="background-color: #4a4a4a;"></button>
                                     <button class="product__colors-option" style="background-color: #8b8b8b;"></button>
                                     <button class="product__colors-option" style="background-color: #4b75d5;"></button>
                                     <button class="product__colors-option" style="background-color: #e24141;"></button>
@@ -331,6 +376,43 @@
                                     <button class="product__colors-option product__colors-option--selected"
                                         style="background-color: #000000;"></button>
                                 </div>
+                            </div>
+                            <div class="swiper product__colors__swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <button class="product__colors-option"
+                                            style="background-color: #4a4a4a;"></button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button class="product__colors-option"
+                                            style="background-color: #8b8b8b;"></button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button class="product__colors-option"
+                                            style="background-color: #4b75d5;"></button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button class="product__colors-option"
+                                            style="background-color: #e24141;"></button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button class="product__colors-option"
+                                            style="background-color: #ea6270;"></button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button class="product__colors-option"
+                                            style="background-color: #ffd700;"></button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button class="product__colors-option"
+                                            style="background-color: #ffffff;"></button>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <button class="product__colors-option product__colors-option--selected"
+                                            style="background-color: #000000;"></button>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar swiper-scrollbar--colors"></div>
                             </div>
                             <div class="product__customize">
                                 <button class="product__customize-button">Редагувати в конструкторі</button>
@@ -345,8 +427,10 @@
                             </div>
                             <div class="product__price">
                                 <div class="product__price-left">
-                                    <div class="product__price-current">599 грн.</div>
-                                    <div class="product__price-old">899 грн.</div>
+                                    <div class="product__price-wrapper">
+                                        <div class="product__price-current">599 грн.</div>
+                                        <div class="product__price-old">899 грн.</div>
+                                    </div>
                                     <div class="product__price-note">Вартість без друку*</div>
                                 </div>
                                 <div class="product__price-right">
@@ -996,6 +1080,144 @@
                     </div>
                 </div>
             </section>
+
+            <section class="product__info product__info--mobile">
+                <ul class="container accordeon__list product__info__list">
+                    <li class="product__info__list-wrapper accordeon">
+                        <h2>Опис товару</h2>
+                        <div class="accordeon__info">
+                            <h3>ШИРОКИЙ АСОРТИМЕНТ ОДЯГУ ПІД НАНЕСЕННЯ ПРИНТА</h3>
+                            <p>В наявності великий асортимент одягу під друк, широкий вибір кольорів та розмірів. Майкофф наносить фото, зображення, написи на такі види текстильних виробів:</p>
+                            <ul>
+                                <li>жіночі, чоловічі, дитячі футболки;</li>
+                                <li>поло з коротким та довгим рукавом для дітей та дорослих;</li>
+                                <li>реглани;</li>
+                                <li>вітровки та куртки;</li>
+                                <li>толстовки;</li>
+                                <li>кепки;</li>
+                                <li>фартухи;</li>
+                                <li>еко-сумки з бавовни та тканинні рюкзаки.</li>
+                            </ul>
+                            <p>Компанія співпрацює з найкращими виробниками речей з бавовняних та сумішевих тканин. У каталозі представлені вироби брендів, відомих у всьому світі якістю свого трикотажу та пошиття:</p>
+                            <ul>
+                                <li>B&C;</li>
+                                <li>JHK;</li>
+                                <li>Sol's;</li>
+                                <li>Stedman;</li>
+                                <li>Fruit of the Loom.</li>
+                            </ul>
+                            <p>Також ви можете замовити друк логотипу чи написи на чашках, парасольках, сигнальних жилетах чи банданах.</p>
+                        </div>
+                    </li>
+                    <li class="product__info__list-wrapper accordeon ">
+                        <h2>Доставка й оплата</h2>
+                        <div class="accordeon__info">
+                            <h3>ШИРОКИЙ АСОРТИМЕНТ ОДЯГУ ПІД НАНЕСЕННЯ ПРИНТА</h3>
+                            <p>В наявності великий асортимент одягу під друк, широкий вибір кольорів та розмірів. Майкофф наносить фото, зображення, написи на такі види текстильних виробів:</p>
+                            <ul>
+                                <li>жіночі, чоловічі, дитячі футболки;</li>
+                                <li>поло з коротким та довгим рукавом для дітей та дорослих;</li>
+                                <li>реглани;</li>
+                                <li>вітровки та куртки;</li>
+                                <li>толстовки;</li>
+                                <li>кепки;</li>
+                                <li>фартухи;</li>
+                                <li>еко-сумки з бавовни та тканинні рюкзаки.</li>
+                            </ul>
+                            <p>Компанія співпрацює з найкращими виробниками речей з бавовняних та сумішевих тканин. У каталозі представлені вироби брендів, відомих у всьому світі якістю свого трикотажу та пошиття:</p>
+                            <ul>
+                                <li>B&C;</li>
+                                <li>JHK;</li>
+                                <li>Sol's;</li>
+                                <li>Stedman;</li>
+                                <li>Fruit of the Loom.</li>
+                            </ul>
+                            <p>Також ви можете замовити друк логотипу чи написи на чашках, парасольках, сигнальних жилетах чи банданах.</p>
+                        </div>
+                    </li>
+                    <li class="product__info__list-wrapper accordeon ">
+                        <h2>Гарантії та повернення</h2>
+                        <div class="accordeon__info">
+                            <h3>ШИРОКИЙ АСОРТИМЕНТ ОДЯГУ ПІД НАНЕСЕННЯ ПРИНТА</h3>
+                            <p>В наявності великий асортимент одягу під друк, широкий вибір кольорів та розмірів. Майкофф наносить фото, зображення, написи на такі види текстильних виробів:</p>
+                            <ul>
+                                <li>жіночі, чоловічі, дитячі футболки;</li>
+                                <li>поло з коротким та довгим рукавом для дітей та дорослих;</li>
+                                <li>реглани;</li>
+                                <li>вітровки та куртки;</li>
+                                <li>толстовки;</li>
+                                <li>кепки;</li>
+                                <li>фартухи;</li>
+                                <li>еко-сумки з бавовни та тканинні рюкзаки.</li>
+                            </ul>
+                            <p>Компанія співпрацює з найкращими виробниками речей з бавовняних та сумішевих тканин. У каталозі представлені вироби брендів, відомих у всьому світі якістю свого трикотажу та пошиття:</p>
+                            <ul>
+                                <li>B&C;</li>
+                                <li>JHK;</li>
+                                <li>Sol's;</li>
+                                <li>Stedman;</li>
+                                <li>Fruit of the Loom.</li>
+                            </ul>
+                            <p>Також ви можете замовити друк логотипу чи написи на чашках, парасольках, сигнальних жилетах чи банданах.</p>
+                        </div>
+                    </li>
+                    <li class="product__info__list-wrapper accordeon">
+                        <h2>Відгуки</h2>
+                        <div class="accordeon__info" >
+                            <h3>ШИРОКИЙ АСОРТИМЕНТ ОДЯГУ ПІД НАНЕСЕННЯ ПРИНТА</h3>
+                            <p>В наявності великий асортимент одягу під друк, широкий вибір кольорів та розмірів. Майкофф наносить фото, зображення, написи на такі види текстильних виробів:</p>
+                            <ul>
+                                <li>жіночі, чоловічі, дитячі футболки;</li>
+                                <li>поло з коротким та довгим рукавом для дітей та дорослих;</li>
+                                <li>реглани;</li>
+                                <li>вітровки та куртки;</li>
+                                <li>толстовки;</li>
+                                <li>кепки;</li>
+                                <li>фартухи;</li>
+                                <li>еко-сумки з бавовни та тканинні рюкзаки.</li>
+                            </ul>
+                            <p>Компанія співпрацює з найкращими виробниками речей з бавовняних та сумішевих тканин. У каталозі представлені вироби брендів, відомих у всьому світі якістю свого трикотажу та пошиття:</p>
+                            <ul>
+                                <li>B&C;</li>
+                                <li>JHK;</li>
+                                <li>Sol's;</li>
+                                <li>Stedman;</li>
+                                <li>Fruit of the Loom.</li>
+                            </ul>
+                            <p>Також ви можете замовити друк логотипу чи написи на чашках, парасольках, сигнальних жилетах чи банданах.</p>
+                        </div>
+                    </li>
+                    <li class="product__info__list-wrapper accordeon ">
+                        <h2>Питання-Відповіді</h2>
+                        <div class="accordeon__info">
+                            <h3>ШИРОКИЙ АСОРТИМЕНТ ОДЯГУ ПІД НАНЕСЕННЯ ПРИНТА</h3>
+                            <p>В наявності великий асортимент одягу під друк, широкий вибір кольорів та розмірів. Майкофф наносить фото, зображення, написи на такі види текстильних виробів:</p>
+                            <ul>
+                                <li>жіночі, чоловічі, дитячі футболки;</li>
+                                <li>поло з коротким та довгим рукавом для дітей та дорослих;</li>
+                                <li>реглани;</li>
+                                <li>вітровки та куртки;</li>
+                                <li>толстовки;</li>
+                                <li>кепки;</li>
+                                <li>фартухи;</li>
+                                <li>еко-сумки з бавовни та тканинні рюкзаки.</li>
+                            </ul>
+                            <p>Компанія співпрацює з найкращими виробниками речей з бавовняних та сумішевих тканин. У каталозі представлені вироби брендів, відомих у всьому світі якістю свого трикотажу та пошиття:</p>
+                            <ul>
+                                <li>B&C;</li>
+                                <li>JHK;</li>
+                                <li>Sol's;</li>
+                                <li>Stedman;</li>
+                                <li>Fruit of the Loom.</li>
+                            </ul>
+                            <p>Також ви можете замовити друк логотипу чи написи на чашках, парасольках, сигнальних жилетах чи банданах.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            
+
+            
             <section class="calculation">
                 <div class="container">
                     <div class="calculation__content">
@@ -1003,10 +1225,10 @@
                         <form action="">
                             <h2 class="calculation__title">Дізнатися вартість розрахунку</h2>
                             <div class="fields__wrapper">
-                                <div class="input__wrapper">
+                                <div class="field__wrapper">
                                     <input type="text" placeholder="Ваше Ім’я " name="" id="">
                                 </div>
-                                <div class="input__wrapper">
+                                <div class="field__wrapper">
                                     <input type="text" placeholder="Ваш номер телефону" name="" id="">
                                 </div>
                             </div>
@@ -1102,7 +1324,7 @@
                         <p>Підпишіться і ми повідомимо Вам коли товар буде знову в наявності</p>
                     </div>
                     <form class="form__size" action="">
-                        <div class="input__wrapper">
+                        <div class="field__wrapper">
                             <input placeholder="Ваш номер телефону" class="input__phone form__size-phone" type="text">
                         </div>
                         <div class="form__button-wrapper">
@@ -1119,51 +1341,53 @@
                     <div class="product-measurements__image-wrapper">
                         <img src="./img/measurements.png" alt="Виміри Виробу" class="product-measurements__image">
                     </div>
-                    <table class="product-measurements__table">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th>XS</th>
-                                <th>S</th>
-                                <th>M</th>
-                                <th>L</th>
-                                <th>XL</th>
-                                <th>XXL</th>
-                                <th>3XL</th>
-                                <th>4XL</th>
-                                <th>5XL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="title title--first">A</td>
-                                <td class="title title--second">Ширина, см</td>
-                                <td class="item">48</td>
-                                <td class="item">51</td>
-                                <td class="item">53</td>
-                                <td class="item">56</td>
-                                <td class="item">58</td>
-                                <td class="item">61</td>
-                                <td class="item">66</td>
-                                <td class="item">68</td>
-                                <td class="item">72</td>
-                            </tr>
-                            <tr>
-                                <td class="title title--first">B</td>
-                                <td class="title title--second">Довжина, см</td>
-                                <td class="item">68</td>
-                                <td class="item">70</td>
-                                <td class="item">72</td>
-                                <td class="item">74</td>
-                                <td class="item">76</td>
-                                <td class="item">78</td>
-                                <td class="item">82</td>
-                                <td class="item">84</td>
-                                <td class="item">88</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="product-measurements__table-wrapper">
+                        <table class="product-measurements__table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>XS</th>
+                                    <th>S</th>
+                                    <th>M</th>
+                                    <th>L</th>
+                                    <th>XL</th>
+                                    <th>XXL</th>
+                                    <th>3XL</th>
+                                    <th>4XL</th>
+                                    <th>5XL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="title title--first">A</td>
+                                    <td class="title title--second">Ширина, см</td>
+                                    <td class="item">48</td>
+                                    <td class="item">51</td>
+                                    <td class="item">53</td>
+                                    <td class="item">56</td>
+                                    <td class="item">58</td>
+                                    <td class="item">61</td>
+                                    <td class="item">66</td>
+                                    <td class="item">68</td>
+                                    <td class="item">72</td>
+                                </tr>
+                                <tr>
+                                    <td class="title title--first">B</td>
+                                    <td class="title title--second">Довжина, см</td>
+                                    <td class="item">68</td>
+                                    <td class="item">70</td>
+                                    <td class="item">72</td>
+                                    <td class="item">74</td>
+                                    <td class="item">76</td>
+                                    <td class="item">78</td>
+                                    <td class="item">82</td>
+                                    <td class="item">84</td>
+                                    <td class="item">88</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <p class="product-measurements__note">*Дані наведені з інформативною метою і можуть відрізнятися від
                         вказаних в допустимих межах.</p>
                 </div>

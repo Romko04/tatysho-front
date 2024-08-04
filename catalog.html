@@ -258,9 +258,9 @@
         </header>
         <main class="main">
             <div class="container">
-                <div class="pagination">
-                    <div class="pagination__wrapper">
-                        <a class="pagination__home-link" href="./index.html">
+                <div class="breadcrumb">
+                    <div class="breadcrumb__wrapper">
+                        <a class="breadcrumb__home-link" href="./index.html">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -277,6 +277,9 @@
                 <div class="title__wrapper">
                     <h1 class="title">Каталог</h2>
                         <a class="button" href="">Онлайн- конструктор</a>
+                        <div class="settings__button settings__button-show settings__button-show--mobile">
+                            <button>Фільтри</button>
+                        </div>
                 </div>
             </div>
 
@@ -301,8 +304,14 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="catalog__content">
-                        <aside id="sidebar" class="sidebar__catalog">
+                    <div class="catalog__content catalog__content--full">
+                        <aside id="sidebar" class="sidebar__catalog hide">
+                            <div class="sidebar__mobile-top sidebar__mobile-top--filters">
+                                <h2>Фільтри</h2>
+                                <button class="button__closed-wrapper">
+                                    <div class="button__closed active"></div>
+                                </button>
+                            </div>
                             <div class="sidevar__catalog-content">
                                 <div class="filters">
                                     <div class="filter__category">
@@ -422,6 +431,10 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="sidebar__mobile-bottom sidebar__mobile-bottom--filters">
+                                <a href="">Застосувати</a>
+                                <a href="">Показати ввесь асортимент</a>
                             </div>
                         </aside>
                         <ul class="products__list">
@@ -866,10 +879,10 @@
                         <form action="">
                             <h2 class="calculation__title">Дізнатися вартість розрахунку</h2>
                             <div class="fields__wrapper">
-                                <div class="input__wrapper">
+                                <div class="field__wrapper">
                                     <input type="text" placeholder="Ваше Ім’я " name="" id="">
                                 </div>
-                                <div class="input__wrapper">
+                                <div class="field__wrapper">
                                     <input type="text" placeholder="Ваш номер телефону" name="" id="">
                                 </div>
                             </div>
@@ -1083,10 +1096,10 @@
                             <p class="mailing__subtitle">Залишіть ім'я та e-mail для підписки на розсилку новин та
                                 корисної інформації</p>
                             <div class="fields__wrapper fields__wrapper--mailing">
-                                <div class="input__wrapper">
+                                <div class="field__wrapper">
                                     <input type="text" placeholder="Ваше Ім’я " name="" id="">
                                 </div>
-                                <div class="input__wrapper">
+                                <div class="field__wrapper">
                                     <input type="text" placeholder="Ваш номер телефону" name="" id="">
                                 </div>
                             </div>
