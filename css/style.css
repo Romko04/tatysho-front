@@ -1557,41 +1557,55 @@ h1.title {
     flex-direction: column;
 }
 
-.accordeon p, .product__info__content p {
+.accordeon p, .product__info__content, .sale__content p {
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 2rem;
     color: #4b4b4b;
 }
 
-.accordeon__info h3 {
+
+
+h2{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 3.4rem;
+    line-height: 110%;
+    color: var(--style2-242424);
+}
+
+h3 {
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 2.4rem;
     line-height: 110%;
     color: var(--style2-242424);
+
+}
+
+.accordeon__info h3 {
     margin-bottom: 2rem;
 }
-.accordeon__info h4 {
+h4 {
     font-size: 2.0rem;
 }
 
-.accordeon__info h5 {
+h5 {
     font-size: 1.6rem;
 }
 
-.accordeon__info h6 {
+ h6 {
     font-size: 1.2rem;
 
 }
 
-.accordeon ul li, .product__info__content ul li {
+.accordeon ul li, .product__info__content ul li, .sale__content ul li{
     padding-left: 2.5rem;
     font-size: 2rem;
     position: relative;
 }
 
-.accordeon ul li::before,  .product__info__content ul li::before {
+.accordeon ul li::before,  .product__info__content ul li::before, .sale__content ul li:before {
     content: '';
     position: absolute;
     left: 1.75rem;
@@ -4672,4 +4686,61 @@ a:hover svg path,
     }
 
 
+}
+
+
+.sale {
+    margin-top: 8rem;
+}
+.title--sale{
+    font-size: 5rem;
+    text-align: center;
+    width: 100%;
+}
+}
+.container {
+}
+.container--sale {
+    padding: 0px 20rem;
+}
+.sale__img {
+}
+.sale__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+.sale-countdown-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.sale-to {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.countdown {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.time__wrapper {
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: var(--style2-242424);
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 1rem;
+}
+
+
+.sale__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0 8rem;
 }

@@ -422,3 +422,58 @@ if (sortWrapper) {
 }
 
 
+const countdownElements = document.querySelectorAll('.countdown');
+
+
+
+
+if (countdownElements) {
+  countdownElements.forEach(function (element) {
+    const DateTime = element.getAttribute('data-time');
+    var endDate = new Date(DateTime);
+    updateCountdown(endDate, element);
+  });
+}
+
+
+
+function updateCountdown(endDate, countdownElement) {
+  var now = new Date();
+  var difference = endDate - now;
+
+  var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+//   var lang = my_ajax_object.lang;
+//   var daysText, hoursText, minutesText, secondsText;
+
+//   // Визначення тексту залежно від мови
+//   if (lang === 'uk') {
+    
+//   } else if (lang === 'ru') {
+//     daysText = 'дней';
+//     hoursText = 'часов';
+//     minutesText = 'минут';
+//     secondsText = 'секунд';
+//   } else {
+//     // Задайте значення за замовчуванням або обробіть інші мови
+//     daysText = 'days';
+//     hoursText = 'hours';
+//     minutesText = 'minutes';
+//     secondsText = 'seconds';
+//   }
+
+  countdownElement.innerHTML =
+    '<div class="time__wrapper"><span class="countdown-value">' + days + '</span> ' + daysText + ' </div>' +
+    '<div class="time__wrapper"><span class="countdown-value">' + hours + '</span> ' + hoursText + ' </div>' +
+    '<div class="time__wrapper"><span class="countdown-value">' + minutes + '</span> ' + minutesText + ' </div>' +
+    '<div class="time__wrapper"><span class="countdown-value">' + seconds + '</span> ' + secondsText + ' </div>';
+
+  // Оновлення кожної секунди
+  setTimeout(function () {
+    updateCountdown(endDate, countdownElement);
+  }, 1000);
+}
+
